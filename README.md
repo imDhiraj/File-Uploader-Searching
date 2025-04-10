@@ -1,6 +1,6 @@
 # File Uploader and Searcher
 
-A FastAPI-based web application for uploading, managing, and searching files. This project demonstrates the use of modern Python frameworks and libraries to build a scalable and modular backend.
+A FastAPI-based web application for uploading, and searching files using MYSQL. 
 
 ---
 
@@ -54,9 +54,9 @@ A FastAPI-based web application for uploading, managing, and searching files. Th
 
 6. Access the API documentation:
 
-Swagger UI: http://127.0.0.1:8000/docs
+*Swagger UI*: http://127.0.0.1:8000/docs
 OR 
-Postman: Use the Postman collection in the `postman_test/` folder.
+*Postman*: Use the Postman collection in the `postman_test/` folder.
 
 ## Project Structure
 ![alt text](image.png)
