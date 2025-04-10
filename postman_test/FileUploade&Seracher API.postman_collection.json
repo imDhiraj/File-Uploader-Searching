@@ -1,0 +1,611 @@
+{
+	"info": {
+		"_postman_id": "c9569663-f5fa-4700-862f-8e7bd1097931",
+		"name": "FileUploade&Seracher API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28645689"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"postmanUser\",\r\n  \"email\": \"postman@example.com\",\r\n  \"password\": \"strongpassword\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Signup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"postmanUser2\",\r\n  \"email\": \"postman2@example.com\",\r\n  \"password\": \"strongpassword\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/auth/signup",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Thu, 10 Apr 2025 13:01:25 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "40"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 13,\n    \"email\": \"postman2@example.com\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Signup -repeat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser7\",\r\n    \"email\": \"testuser7@example.com\",\r\n    \"password\": \"strongpassword\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Signup -repeat",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"testuser7\",\r\n    \"email\": \"testuser7@example.com\",\r\n    \"password\": \"strongpassword\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/auth/signup",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Thu, 10 Apr 2025 13:00:49 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "36"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Username already exists\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "postmanUser",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "strongpassword",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "postmanUser",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "strongpassword",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Thu, 10 Apr 2025 12:59:08 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "173"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwb3N0bWFuVXNlciIsImV4cCI6MTc0NDI5MTc1MH0.FpUulIgVD3ntrwC3B3n9fSUs3T0ifp_1yD77U3IFGK4\",\n    \"token_type\": \"bearer\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login -Invaild",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "postmanUser3",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "strongpassword",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login -Invaild",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "postmanUser3",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "strongpassword",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Thu, 10 Apr 2025 13:02:28 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "32"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Invalid credentials\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Upload File -PDF",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Upload file -sucess",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwb3N0bWFuVXNlciIsImV4cCI6MTc0NDI5MTc1MH0.FpUulIgVD3ntrwC3B3n9fSUs3T0ifp_1yD77U3IFGK4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "K23eh4hhf/Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/files/upload",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"upload"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Thu, 10 Apr 2025 13:28:24 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "204"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 7,\n    \"filename\": \"8fc960953ade47f58e9d1fc0a6ae4968_Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n    \"original_filename\": \"Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n    \"upload_time\": \"2025-04-10T13:28:24\"\n}"
+				},
+				{
+					"name": "upload file -unauth",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwb3N0bWFuVXNlciIsImV4cCI6MTc0NDI5MTc1MH0.FpUulIgVD3ntrwC3B3n9fSUs3T0ifp_1yD77U3IFGK",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "K23eh4hhf/Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/files/upload",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"upload"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Thu, 10 Apr 2025 13:29:53 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "26"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Invalid token\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Search -query",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "search query",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwb3N0bWFuVXNlciIsImV4cCI6MTc0NDI5MTc1MH0.FpUulIgVD3ntrwC3B3n9fSUs3T0ifp_1yD77U3IFGK4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/files/search?q=dhiraj",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "dhiraj"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Thu, 10 Apr 2025 13:22:28 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "785"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"filename\": \"3bb2af82d1eb4307bd22e28c0295a2a1_Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n        \"original_filename\": \"Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n        \"upload_time\": \"2025-04-09T04:40:51\"\n    },\n    {\n        \"id\": 3,\n        \"filename\": \"f68ac668e26f499f8030095f8a803c56_Dhiraj-Kumbhar-FlowCV-Resume-20250404.pdf\",\n        \"original_filename\": \"Dhiraj-Kumbhar-FlowCV-Resume-20250404.pdf\",\n        \"upload_time\": \"2025-04-09T04:57:11\"\n    },\n    {\n        \"id\": 5,\n        \"filename\": \"196f05fb9b9a4647b5b3e04a96772859_Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n        \"original_filename\": \"Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n        \"upload_time\": \"2025-04-09T14:47:07\"\n    },\n    {\n        \"id\": 6,\n        \"filename\": \"5ed120caa99e4a2e83d995e2ed8be62a_Dhiraj Kumbhar Resume 1 (1).pdf\",\n        \"original_filename\": \"Dhiraj Kumbhar Resume 1 (1).pdf\",\n        \"upload_time\": \"2025-04-09T19:19:51\"\n    }\n]"
+				}
+			]
+		}
+	]
+}

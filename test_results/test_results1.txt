@@ -1,0 +1,40 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.6, pytest-8.3.5, pluggy-1.5.0
+rootdir: C:\Users\Dhiraj\OneDrive\Desktop\File Uploader and Seracher
+plugins: anyio-4.9.0, asyncio-0.26.0
+asyncio: mode=Mode.STRICT, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 2 items
+
+tests\test_auth.py .F                                                    [100%]
+
+================================== FAILURES ===================================
+___________________________ test_user_login_success ___________________________
+
+async_client = <httpx.AsyncClient object at 0x000001B852626C60>
+
+    @pytest.mark.asyncio
+    async def test_user_login_success(async_client):
+        response = await async_client.post("/api/v1/auth/login", json={
+            "username": "testuser3",
+            "password": "strongpassword"
+        })
+    
+>       assert response.status_code == 200
+E       assert 422 == 200
+E        +  where 422 = <Response [422 Unprocessable Entity]>.status_code
+
+tests\test_auth.py:32: AssertionError
+============================== warnings summary ===============================
+venv\Lib\site-packages\pydantic\_internal\_config.py:323
+  C:\Users\Dhiraj\OneDrive\Desktop\File Uploader and Seracher\venv\Lib\site-packages\pydantic\_internal\_config.py:323: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+venv\Lib\site-packages\pydantic\_internal\_config.py:373
+  C:\Users\Dhiraj\OneDrive\Desktop\File Uploader and Seracher\venv\Lib\site-packages\pydantic\_internal\_config.py:373: UserWarning: Valid config keys have changed in V2:
+  * 'orm_mode' has been renamed to 'from_attributes'
+    warnings.warn(message, UserWarning)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_auth.py::test_user_login_success - assert 422 == 200
+=================== 1 failed, 1 passed, 2 warnings in 0.55s ===================
