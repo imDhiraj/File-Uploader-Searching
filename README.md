@@ -7,8 +7,12 @@ A FastAPI-based web application for uploading, and searching files using MYSQL.
 ## Features
 
 - **User Authentication**: Secure user login and registration using JWT tokens.
-- **File Upload**: Upload files to the server with proper validation.
-- **File Search**: Search for uploaded files based on metadata or content.
+- **File Upload**: 
+   - Upload files to the server with proper validation.
+   - Extracts content from PDF files for search functionality.
+- **File Search**: 
+   - Search for uploaded files based on metadata or content of the file.
+   
 - **Database Integration**: Uses SQLAlchemy for database operations.
 - **Modular Design**: Organized into reusable components for scalability.
 - **API Documentation**: Automatically generated Swagger UI and ReDoc.
@@ -23,7 +27,7 @@ A FastAPI-based web application for uploading, and searching files using MYSQL.
 - **PyMySQL**: For MySQL database connection.
 - **JWT (JSON Web Tokens)**: For secure user authentication.
 - **Uvicorn**: For running the FastAPI server.
-
+- **Alembic**: For automating and managing database schema migrations.
 ---
 
 ## Installation
@@ -59,7 +63,7 @@ OR
 *Postman*: Use the Postman collection in the `postman_test/` folder.
 
 ## Project Structure
-![alt text](image.png)
+![alt text](image2.png)
 
 
 ## Testing
