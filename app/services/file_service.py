@@ -5,6 +5,7 @@ from app.schemas.file import ResumeFileCreate
 from app.core.config import settings
 from datetime import datetime
 import uuid
+from PyPDF2 import PdfReader
 
 def save_resume_file(db: Session, file_data: ResumeFileCreate, uploaded_file) -> ResumeFile:
     # Generate a unique filename
@@ -18,11 +19,15 @@ def save_resume_file(db: Session, file_data: ResumeFileCreate, uploaded_file) ->
     with open(save_path, "wb") as f:
         f.write(uploaded_file.file.read())
 
+    text_content = extract_text_from_pdf(save_path)
+
+
     # Save metadata to DB
     db_file = ResumeFile(
         filename=unique_name,
         original_filename=file_data.original_filename,
-        upload_time=datetime.utcnow()
+        upload_time=datetime.utcnow(),
+        content=file_data.content
     )
     db.add(db_file)
     db.commit()
@@ -32,5 +37,18 @@ def save_resume_file(db: Session, file_data: ResumeFileCreate, uploaded_file) ->
 
 def search_resumes(db: Session, query: str):
     return db.query(ResumeFile).filter(
-        ResumeFile.original_filename.ilike(f"%{query}%")
+        (ResumeFile.original_filename.ilike(f"%{query}%")) |
+        (ResumeFile.content.ilike(f"%{query}%"))
     ).all()
+
+
+def extract_text_from_pdf(file_path: str) -> str:
+    try:
+        reader = PdfReader(file_path)
+        text = ""
+        for page in reader.pages:
+            text += page.extract_text() or ""
+        return text
+    except Exception as e:
+        print(f"Error extracting text: {e}")
+        return ""
