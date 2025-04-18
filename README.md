@@ -15,7 +15,7 @@ A FastAPI-based web application for uploading, and searching files using MYSQL.
    
 - **Database Integration**: Uses SQLAlchemy for database operations.
 - **Modular Design**: Organized into reusable components for scalability.
-- **API Documentation**: Automatically generated Swagger UI and ReDoc.
+
 
 ---
 

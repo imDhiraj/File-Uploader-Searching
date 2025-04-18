@@ -1,0 +1,795 @@
+{
+	"info": {
+		"_postman_id": "c9569663-f5fa-4700-862f-8e7bd1097931",
+		"name": "FileUploade&Seracher API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28645689"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"postmanUser\",\r\n  \"email\": \"postman@example.com\",\r\n  \"password\": \"strongpassword\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Signup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"postmanUser2\",\r\n  \"email\": \"postman2@example.com\",\r\n  \"password\": \"strongpassword\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/auth/signup",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Thu, 10 Apr 2025 13:01:25 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "40"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 13,\n    \"email\": \"postman2@example.com\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Signup -repeat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"testuser7\",\r\n    \"email\": \"testuser7@example.com\",\r\n    \"password\": \"strongpassword\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Signup -repeat",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"testuser7\",\r\n    \"email\": \"testuser7@example.com\",\r\n    \"password\": \"strongpassword\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/auth/signup",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Thu, 10 Apr 2025 13:00:49 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "36"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Username already exists\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "postmanUser",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "strongpassword",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "postmanUser",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "strongpassword",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Thu, 10 Apr 2025 12:59:08 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "173"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwb3N0bWFuVXNlciIsImV4cCI6MTc0NDI5MTc1MH0.FpUulIgVD3ntrwC3B3n9fSUs3T0ifp_1yD77U3IFGK4\",\n    \"token_type\": \"bearer\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Login -Invaild",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "postmanUser3",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "strongpassword",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login -Invaild",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "postmanUser3",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "strongpassword",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Thu, 10 Apr 2025 13:02:28 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "32"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Invalid credentials\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Upload File -PDF",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwb3N0bWFuVXNlciIsImV4cCI6MTc0NDI5MTc1MH0.FpUulIgVD3ntrwC3B3n9fSUs3T0ifp_1yD77U3IFGK",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "K23eh4hhf/Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/files/upload",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"files",
+						"upload"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Upload file -sucess",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwb3N0bWFuVXNlciIsImV4cCI6MTc0NDI5MTc1MH0.FpUulIgVD3ntrwC3B3n9fSUs3T0ifp_1yD77U3IFGK4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "K23eh4hhf/Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/files/upload",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"upload"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Thu, 10 Apr 2025 13:28:24 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "204"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 7,\n    \"filename\": \"8fc960953ade47f58e9d1fc0a6ae4968_Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n    \"original_filename\": \"Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n    \"upload_time\": \"2025-04-10T13:28:24\"\n}"
+				},
+				{
+					"name": "upload file -unauth",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwb3N0bWFuVXNlciIsImV4cCI6MTc0NDI5MTc1MH0.FpUulIgVD3ntrwC3B3n9fSUs3T0ifp_1yD77U3IFGK",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "K23eh4hhf/Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/files/upload",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"upload"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Thu, 10 Apr 2025 13:29:53 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "26"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Invalid token\"\n}"
+				},
+				{
+					"name": "Upload File -PDF with content",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwb3N0bWFuVXNlciIsImV4cCI6MTc0NDk1NjYxNH0.qx0bDpqS_N9smNcLRnJeZQYAxC_RN7r8mKx2k7Fr5jw",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "K23eh4hhf/Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/files/upload",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"upload"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 18 Apr 2025 05:40:33 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "3165"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 15,\n    \"filename\": \"d623a8b114ca45be9c4392e3de5558f6_Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n    \"original_filename\": \"Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n    \"upload_time\": \"2025-04-18T05:40:34\",\n    \"content\": \"Dhiraj Kumbhar\\ndhirajpk28@gmail.com 9284298592 Linkedin github Pune \\nEDUCATION\\nComputer Engineering\\nAjeenkya D Y Patil School of Engineering\\n•UG from Savitribai Phule University Pune With CGPA of 7.09\\nHigher Secondary (HSE)\\nSadhana Vidyalaya & R R Shinde Junior College\\n•Achieved 62% in HSE and secured 82 percentile in JEE (Main).\\nSecondary School (SSC)\\nNutan Madhyamik Vidyalaya\\n•Secured 80.60% in SSC\\nSKILLS\\nProgramming Languages: C++, Java,Python , Tools: Microsoft Visual Studio, Embarcadero C++ Builder, VS Code, Soft \\nSkills: Problem Solving, Communication, Presentation, Adaptability, Teamwork, Leadership, OS: Windows, Linux (Ubuntu)\\nPROJECTS\\nText-Summarizer\\nKey Skills : Python, FastAPI, HuggingFace Transformers.\\n•Developed a Text Summarizer Web App using FastAPI and HuggingFace Transformers \\n(BART model) for natural language summarization.\\n•Enabled users to submit raw text directly via a simple HTML frontend for instant \\nsummarization output.\\nQuiz Application\\nKey Skills: Embarcadero C++ Builder, C++,  FMX\\n•Multiple-choice questions: Users can choose the correct answer from provided options.\\n•User-friendly interface: Provides a clear and intuitive user experience.\\n•Hardcoded questions: Currently, questions are directly coded into the application.\\nToDo Application (C++)\\nKey Skills: Embarcadero C++ Builder ,C++17, FMX\\n• Users can effortlessly add and remove tasks from the list through an intuitive interface. \\n•Enabled task management through simple click interactions for task removal.\\nEnhancing File Security Using Hybrid Cryptography\\nKey Skills: Cryptography UI\\\\UX Java Swing\\n• Integrating hybrid cryptography techniques for safeguarding sensitive data with Multiparty \\nencryption.  \\n•Project focuses on improving file security and minimizing unauthorized access risks.\\nVideo Streaming Platfrom (Netflix Clone)\\nKey Skills: Android Development RazerPay XML Firebase API\\n• Developed a video streaming platform that allow users to watch movies and trailers. \\n•The platform includes features such as monthly subscription, multiple payment options\\nPUBLICATIONS\\nEnhancing file security using hybrid cryptography\\nIJSRSET-2023\\nJul 2020 – Apr 2024\\nPUNE, India\\nJun 2019 – Apr 2020\\nPUNE, India\\nJun 2017 – Apr 2018\\nPUNE, India\\nMar 2025\\nSep 2024\\nAug 2024\\nFeb 2024\\nAug 2023\\n2023ACHIEVEMENT\\nGoogle Developer Student Club Lead\\n@ AJEENKYA DY PATIL SCHOOL OF ENGINEERING\\n•As Lead created tech community of 500+members across the platform in the 1st chapter in in \\nmy campus\\n•Being Specker and manager Conducted 4+event and multiple competitions\\nCERTIFICATES\\nBeginning C++ Programming - From Beginner to Beyond\\nLearned Programming in C++: Covered OOP concepts, STL, Lambda expressions, and more.\\nPython for Data Science\\nIntroduction to powerful open-source Python libraries like NumPy, Pandas, Matplotlib, and Scikit-learn.\\n2023 – 2024\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Search -query",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwb3N0bWFuVXNlciIsImV4cCI6MTc0NDI5MTc1MH0.FpUulIgVD3ntrwC3B3n9fSUs3T0ifp_1yD77U3IFGK4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/files/search?q=dhiraj",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"files",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "dhiraj"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "search query on name",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwb3N0bWFuVXNlciIsImV4cCI6MTc0NDI5MTc1MH0.FpUulIgVD3ntrwC3B3n9fSUs3T0ifp_1yD77U3IFGK4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/files/search?q=dhiraj",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "dhiraj"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Thu, 10 Apr 2025 13:22:28 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "785"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"filename\": \"3bb2af82d1eb4307bd22e28c0295a2a1_Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n        \"original_filename\": \"Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n        \"upload_time\": \"2025-04-09T04:40:51\"\n    },\n    {\n        \"id\": 3,\n        \"filename\": \"f68ac668e26f499f8030095f8a803c56_Dhiraj-Kumbhar-FlowCV-Resume-20250404.pdf\",\n        \"original_filename\": \"Dhiraj-Kumbhar-FlowCV-Resume-20250404.pdf\",\n        \"upload_time\": \"2025-04-09T04:57:11\"\n    },\n    {\n        \"id\": 5,\n        \"filename\": \"196f05fb9b9a4647b5b3e04a96772859_Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n        \"original_filename\": \"Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n        \"upload_time\": \"2025-04-09T14:47:07\"\n    },\n    {\n        \"id\": 6,\n        \"filename\": \"5ed120caa99e4a2e83d995e2ed8be62a_Dhiraj Kumbhar Resume 1 (1).pdf\",\n        \"original_filename\": \"Dhiraj Kumbhar Resume 1 (1).pdf\",\n        \"upload_time\": \"2025-04-09T19:19:51\"\n    }\n]"
+				},
+				{
+					"name": "Search -query on content",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwb3N0bWFuVXNlciIsImV4cCI6MTc0NDk1NjYxNH0.qx0bDpqS_N9smNcLRnJeZQYAxC_RN7r8mKx2k7Fr5jw",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/files/search?q=62%",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"files",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "62%"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 18 Apr 2025 05:41:23 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "17542"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 8,\n        \"filename\": \"d7f964bc521041cca85dd52a422832e4_Dhiraj Kumbhar 9284298592.pdf\",\n        \"original_filename\": \"Dhiraj Kumbhar 9284298592.pdf\",\n        \"upload_time\": \"2025-04-17T16:41:55\",\n        \"content\": \"DHIRAJ PANDURANG\\nKUMBHAR\\nB.E. - Computer Engineering\\nPh: +91-9284298592\\nEmail: dhiraj20021011be233@dypisp.onmicrosoft.com\\nPune, Maharashtra, India - 411036\\nLinkedIn: https://www.linkedin.com/in/dhiraj-kumbhar-\\nb89b161b9/  \\nLeadership  Problem Solving  Design  Communications\\nBRIEF SUMMARY\\nHighly motivated to contribute and learn within your organization. Possess experience with various programming languages including\\nJava, C++, and Python. Also I got selected as the 1st Google DSC Lead in my college, demonstrating strong leadership and initiative.\\nKEY EXPERTISE\\nEDUCATION\\n2020  -  2024 Ajeenkya D Y Patil School of Engineering - ADYPSOE\\nB.E. - Computer Engineering | CGPA: 7.09 / 10\\n2020 Sadhana Vidyalaya & R R Shinde Junior College, Pune\\n12th | MSBSHSE  | Percentage: 62 / 100\\n2018 Nutan Madhyamik Vidyalaya, Pune\\n10th | MSBSHSE  | Percentage: 80.60 / 100\\nINTERNSHIPS\\n22 Feb, 2023  - 22 Apr, 2023  NullClasses  | IT / Computers - Software\\nDevolper\\nKey Skills:  Android Development  XML  API  Payments\\n\\u0000 Developed a video streaming platform.\\n\\u0000 Two-month online internship on Android Development\\n\\u0000 It allows users to watch movies and various movie trailers\\nPROJECTS\\n18 Oct, 2023  -  22 Mar, 2024 Enhancing file security using hybrid cryptography\\nMentor:  Prof.Pallavi Shimpi  | Team Size:  4\\nKey Skills:  Cryptography  UI\\\\UX  Java Swing\\n\\u0000 Integrating hybrid cryptography techniques for safeguarding sensitive data with Multiparty\\nencryption.\\n\\u0000 Project focuses on improving file security and minimizing unauthorized access risks.\\n22 Feb, 2023  -  22 Apr, 2023 Video Streaming Platfrom\\nMentor:  NullClasses\\nKey Skills:  Android Development  RazerPay  XML  Firebase  API\\n\\u0000 Developed a video streaming platform that allow users to watch movies and trailers.\\n\\u0000 The platform includes features such as monthly subscription, multiple payment\\noptions\\n20 Jul, 2021  -  31 Aug, 2021 Notes Provider\\nMentor:  Prof. Ajita Mahapadi  | Team Size:  4\\nKey Skills:  Android Studio  Java  firebase  UI Development  XML\\n\\u0000 Curated one stop solution for engg. student for their subjects like DSA\\n\\u0000 Simplifying engineering with handwritten notes & resource libraries for\\nbeginners, tailor explanations for better engagement!Gender:  Male\\nCurrent Address:  Shri ram colony, Mundwa, Hadpser, Pune,\\nMaharashtra, India - 411036Date of Birth:  28 Sep, 2002\\nKnown Languages:  English,Marathi, Hindi\\nPhone Number:  +91-9284298592\\nEmails:  dhiraj20021011be233@dypisp.onmicrosoft.com  , dhirajpk28@gmail.comACHIEVEMENTS\\nGoogle DSC lead 2023-24\\nASSESSMENTS / CERTIFICATIONS\\nPython for Data Science\\nKey Skills:  Python  Data Science  Pandas  NumPy  Matplotlib  AI\\nIntroduction to some of the powerful, open-source python libraries used in Data Science including Numeric-Python (Numpy), Pandas,\\nMatplotlib and Scikit-learn\\nApp Engine: 3 Ways\\nKey Skills:  Google Cloud Platform  PHP  Python\\nA skill badge by completing the App Engine: 3 ways quest, where you learn how to use App Engine with Python, Go, and PHP.\\nCompose Camp on Android Developmentwith kotlin\\nKey Skills:  Kotlin  Android Studio  Mobile Application Development\\nLearned buliding an android application with kotlin and basic kotlin commands with using google program known as compose camp\\nCertificate Of Participation for Cyber Security\\nKey Skills:  Basic of Cyber Security\\nIn this event i have learned about different thing in Cyber Security and How multiple companies tackle security attacks on there system\\nSEMINARS / TRAININGS / WORKSHOPS\\n16 Apr, 2023  -  16 Apr, 2023 GDSC WOW Pune 2023 Institute Name:  GDSC WOW Pune\\nKey Skills:  Fundamentals  AIML  Android Development  Microservices  Software Development\\nAn inspiring software development seminar broadened my horizons with diverse topics and speakers.I gained valuable knowledge and\\nskills, networked with like-minded individuals, and left feeling motivated and ready to kickstart my development journey.\\n01 Dec, 2021  -  07 Jan, 2022 Workshop on Python for Data Science\\nInstitute Name:  Ajeenkya D Y Patil School of Engineering - ADYPSOE\\nKey Skills:  Python  Pandas  NumPy  Matplotlib\\nI completed a comprehensive a month-long Python for data science workshop. Through hands-on practice and expert guidance, I\\nmastered essential libraries like Pandas, Matplotlib, and NumPy, empowering me to effectively analyze and visualize data.\\nPERSONAL INTERESTS / HOBBIES\\nDrawing\\nWEB LINKS\\nGithub - https://github.com/imDhiraj\\nCodechef - https://www.codechef.com/users/dhiraj2002\\nOther - https://developers.google.com/profile/u/101613757849278214878\\nPERSONAL DETAILS\"\n    },\n    {\n        \"id\": 10,\n        \"filename\": \"8b01b9d8e9f64d4ea61d34c4361dccbf_Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n        \"original_filename\": \"Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n        \"upload_time\": \"2025-04-17T19:30:49\",\n        \"content\": \"Dhiraj Kumbhar\\ndhirajpk28@gmail.com 9284298592 Linkedin github Pune \\nEDUCATION\\nComputer Engineering\\nAjeenkya D Y Patil School of Engineering\\n•UG from Savitribai Phule University Pune With CGPA of 7.09\\nHigher Secondary (HSE)\\nSadhana Vidyalaya & R R Shinde Junior College\\n•Achieved 62% in HSE and secured 82 percentile in JEE (Main).\\nSecondary School (SSC)\\nNutan Madhyamik Vidyalaya\\n•Secured 80.60% in SSC\\nSKILLS\\nProgramming Languages: C++, Java,Python , Tools: Microsoft Visual Studio, Embarcadero C++ Builder, VS Code, Soft \\nSkills: Problem Solving, Communication, Presentation, Adaptability, Teamwork, Leadership, OS: Windows, Linux (Ubuntu)\\nPROJECTS\\nText-Summarizer\\nKey Skills : Python, FastAPI, HuggingFace Transformers.\\n•Developed a Text Summarizer Web App using FastAPI and HuggingFace Transformers \\n(BART model) for natural language summarization.\\n•Enabled users to submit raw text directly via a simple HTML frontend for instant \\nsummarization output.\\nQuiz Application\\nKey Skills: Embarcadero C++ Builder, C++,  FMX\\n•Multiple-choice questions: Users can choose the correct answer from provided options.\\n•User-friendly interface: Provides a clear and intuitive user experience.\\n•Hardcoded questions: Currently, questions are directly coded into the application.\\nToDo Application (C++)\\nKey Skills: Embarcadero C++ Builder ,C++17, FMX\\n• Users can effortlessly add and remove tasks from the list through an intuitive interface. \\n•Enabled task management through simple click interactions for task removal.\\nEnhancing File Security Using Hybrid Cryptography\\nKey Skills: Cryptography UI\\\\UX Java Swing\\n• Integrating hybrid cryptography techniques for safeguarding sensitive data with Multiparty \\nencryption.  \\n•Project focuses on improving file security and minimizing unauthorized access risks.\\nVideo Streaming Platfrom (Netflix Clone)\\nKey Skills: Android Development RazerPay XML Firebase API\\n• Developed a video streaming platform that allow users to watch movies and trailers. \\n•The platform includes features such as monthly subscription, multiple payment options\\nPUBLICATIONS\\nEnhancing file security using hybrid cryptography\\nIJSRSET-2023\\nJul 2020 – Apr 2024\\nPUNE, India\\nJun 2019 – Apr 2020\\nPUNE, India\\nJun 2017 – Apr 2018\\nPUNE, India\\nMar 2025\\nSep 2024\\nAug 2024\\nFeb 2024\\nAug 2023\\n2023ACHIEVEMENT\\nGoogle Developer Student Club Lead\\n@ AJEENKYA DY PATIL SCHOOL OF ENGINEERING\\n•As Lead created tech community of 500+members across the platform in the 1st chapter in in \\nmy campus\\n•Being Specker and manager Conducted 4+event and multiple competitions\\nCERTIFICATES\\nBeginning C++ Programming - From Beginner to Beyond\\nLearned Programming in C++: Covered OOP concepts, STL, Lambda expressions, and more.\\nPython for Data Science\\nIntroduction to powerful open-source Python libraries like NumPy, Pandas, Matplotlib, and Scikit-learn.\\n2023 – 2024\"\n    },\n    {\n        \"id\": 12,\n        \"filename\": \"d0f1e2cd9e9f4f2db0f40075154fe56a_Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n        \"original_filename\": \"Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n        \"upload_time\": \"2025-04-17T19:37:42\",\n        \"content\": \"Dhiraj Kumbhar\\ndhirajpk28@gmail.com 9284298592 Linkedin github Pune \\nEDUCATION\\nComputer Engineering\\nAjeenkya D Y Patil School of Engineering\\n•UG from Savitribai Phule University Pune With CGPA of 7.09\\nHigher Secondary (HSE)\\nSadhana Vidyalaya & R R Shinde Junior College\\n•Achieved 62% in HSE and secured 82 percentile in JEE (Main).\\nSecondary School (SSC)\\nNutan Madhyamik Vidyalaya\\n•Secured 80.60% in SSC\\nSKILLS\\nProgramming Languages: C++, Java,Python , Tools: Microsoft Visual Studio, Embarcadero C++ Builder, VS Code, Soft \\nSkills: Problem Solving, Communication, Presentation, Adaptability, Teamwork, Leadership, OS: Windows, Linux (Ubuntu)\\nPROJECTS\\nText-Summarizer\\nKey Skills : Python, FastAPI, HuggingFace Transformers.\\n•Developed a Text Summarizer Web App using FastAPI and HuggingFace Transformers \\n(BART model) for natural language summarization.\\n•Enabled users to submit raw text directly via a simple HTML frontend for instant \\nsummarization output.\\nQuiz Application\\nKey Skills: Embarcadero C++ Builder, C++,  FMX\\n•Multiple-choice questions: Users can choose the correct answer from provided options.\\n•User-friendly interface: Provides a clear and intuitive user experience.\\n•Hardcoded questions: Currently, questions are directly coded into the application.\\nToDo Application (C++)\\nKey Skills: Embarcadero C++ Builder ,C++17, FMX\\n• Users can effortlessly add and remove tasks from the list through an intuitive interface. \\n•Enabled task management through simple click interactions for task removal.\\nEnhancing File Security Using Hybrid Cryptography\\nKey Skills: Cryptography UI\\\\UX Java Swing\\n• Integrating hybrid cryptography techniques for safeguarding sensitive data with Multiparty \\nencryption.  \\n•Project focuses on improving file security and minimizing unauthorized access risks.\\nVideo Streaming Platfrom (Netflix Clone)\\nKey Skills: Android Development RazerPay XML Firebase API\\n• Developed a video streaming platform that allow users to watch movies and trailers. \\n•The platform includes features such as monthly subscription, multiple payment options\\nPUBLICATIONS\\nEnhancing file security using hybrid cryptography\\nIJSRSET-2023\\nJul 2020 – Apr 2024\\nPUNE, India\\nJun 2019 – Apr 2020\\nPUNE, India\\nJun 2017 – Apr 2018\\nPUNE, India\\nMar 2025\\nSep 2024\\nAug 2024\\nFeb 2024\\nAug 2023\\n2023ACHIEVEMENT\\nGoogle Developer Student Club Lead\\n@ AJEENKYA DY PATIL SCHOOL OF ENGINEERING\\n•As Lead created tech community of 500+members across the platform in the 1st chapter in in \\nmy campus\\n•Being Specker and manager Conducted 4+event and multiple competitions\\nCERTIFICATES\\nBeginning C++ Programming - From Beginner to Beyond\\nLearned Programming in C++: Covered OOP concepts, STL, Lambda expressions, and more.\\nPython for Data Science\\nIntroduction to powerful open-source Python libraries like NumPy, Pandas, Matplotlib, and Scikit-learn.\\n2023 – 2024\"\n    },\n    {\n        \"id\": 14,\n        \"filename\": \"24ea5d5a1d2c44bf99374af811aeca59_Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n        \"original_filename\": \"Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n        \"upload_time\": \"2025-04-18T05:10:47\",\n        \"content\": \"Dhiraj Kumbhar\\ndhirajpk28@gmail.com 9284298592 Linkedin github Pune \\nEDUCATION\\nComputer Engineering\\nAjeenkya D Y Patil School of Engineering\\n•UG from Savitribai Phule University Pune With CGPA of 7.09\\nHigher Secondary (HSE)\\nSadhana Vidyalaya & R R Shinde Junior College\\n•Achieved 62% in HSE and secured 82 percentile in JEE (Main).\\nSecondary School (SSC)\\nNutan Madhyamik Vidyalaya\\n•Secured 80.60% in SSC\\nSKILLS\\nProgramming Languages: C++, Java,Python , Tools: Microsoft Visual Studio, Embarcadero C++ Builder, VS Code, Soft \\nSkills: Problem Solving, Communication, Presentation, Adaptability, Teamwork, Leadership, OS: Windows, Linux (Ubuntu)\\nPROJECTS\\nText-Summarizer\\nKey Skills : Python, FastAPI, HuggingFace Transformers.\\n•Developed a Text Summarizer Web App using FastAPI and HuggingFace Transformers \\n(BART model) for natural language summarization.\\n•Enabled users to submit raw text directly via a simple HTML frontend for instant \\nsummarization output.\\nQuiz Application\\nKey Skills: Embarcadero C++ Builder, C++,  FMX\\n•Multiple-choice questions: Users can choose the correct answer from provided options.\\n•User-friendly interface: Provides a clear and intuitive user experience.\\n•Hardcoded questions: Currently, questions are directly coded into the application.\\nToDo Application (C++)\\nKey Skills: Embarcadero C++ Builder ,C++17, FMX\\n• Users can effortlessly add and remove tasks from the list through an intuitive interface. \\n•Enabled task management through simple click interactions for task removal.\\nEnhancing File Security Using Hybrid Cryptography\\nKey Skills: Cryptography UI\\\\UX Java Swing\\n• Integrating hybrid cryptography techniques for safeguarding sensitive data with Multiparty \\nencryption.  \\n•Project focuses on improving file security and minimizing unauthorized access risks.\\nVideo Streaming Platfrom (Netflix Clone)\\nKey Skills: Android Development RazerPay XML Firebase API\\n• Developed a video streaming platform that allow users to watch movies and trailers. \\n•The platform includes features such as monthly subscription, multiple payment options\\nPUBLICATIONS\\nEnhancing file security using hybrid cryptography\\nIJSRSET-2023\\nJul 2020 – Apr 2024\\nPUNE, India\\nJun 2019 – Apr 2020\\nPUNE, India\\nJun 2017 – Apr 2018\\nPUNE, India\\nMar 2025\\nSep 2024\\nAug 2024\\nFeb 2024\\nAug 2023\\n2023ACHIEVEMENT\\nGoogle Developer Student Club Lead\\n@ AJEENKYA DY PATIL SCHOOL OF ENGINEERING\\n•As Lead created tech community of 500+members across the platform in the 1st chapter in in \\nmy campus\\n•Being Specker and manager Conducted 4+event and multiple competitions\\nCERTIFICATES\\nBeginning C++ Programming - From Beginner to Beyond\\nLearned Programming in C++: Covered OOP concepts, STL, Lambda expressions, and more.\\nPython for Data Science\\nIntroduction to powerful open-source Python libraries like NumPy, Pandas, Matplotlib, and Scikit-learn.\\n2023 – 2024\"\n    },\n    {\n        \"id\": 15,\n        \"filename\": \"d623a8b114ca45be9c4392e3de5558f6_Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n        \"original_filename\": \"Dhiraj-Kumbhar-FlowCV-Resume-20250407 (1).pdf\",\n        \"upload_time\": \"2025-04-18T05:40:34\",\n        \"content\": \"Dhiraj Kumbhar\\ndhirajpk28@gmail.com 9284298592 Linkedin github Pune \\nEDUCATION\\nComputer Engineering\\nAjeenkya D Y Patil School of Engineering\\n•UG from Savitribai Phule University Pune With CGPA of 7.09\\nHigher Secondary (HSE)\\nSadhana Vidyalaya & R R Shinde Junior College\\n•Achieved 62% in HSE and secured 82 percentile in JEE (Main).\\nSecondary School (SSC)\\nNutan Madhyamik Vidyalaya\\n•Secured 80.60% in SSC\\nSKILLS\\nProgramming Languages: C++, Java,Python , Tools: Microsoft Visual Studio, Embarcadero C++ Builder, VS Code, Soft \\nSkills: Problem Solving, Communication, Presentation, Adaptability, Teamwork, Leadership, OS: Windows, Linux (Ubuntu)\\nPROJECTS\\nText-Summarizer\\nKey Skills : Python, FastAPI, HuggingFace Transformers.\\n•Developed a Text Summarizer Web App using FastAPI and HuggingFace Transformers \\n(BART model) for natural language summarization.\\n•Enabled users to submit raw text directly via a simple HTML frontend for instant \\nsummarization output.\\nQuiz Application\\nKey Skills: Embarcadero C++ Builder, C++,  FMX\\n•Multiple-choice questions: Users can choose the correct answer from provided options.\\n•User-friendly interface: Provides a clear and intuitive user experience.\\n•Hardcoded questions: Currently, questions are directly coded into the application.\\nToDo Application (C++)\\nKey Skills: Embarcadero C++ Builder ,C++17, FMX\\n• Users can effortlessly add and remove tasks from the list through an intuitive interface. \\n•Enabled task management through simple click interactions for task removal.\\nEnhancing File Security Using Hybrid Cryptography\\nKey Skills: Cryptography UI\\\\UX Java Swing\\n• Integrating hybrid cryptography techniques for safeguarding sensitive data with Multiparty \\nencryption.  \\n•Project focuses on improving file security and minimizing unauthorized access risks.\\nVideo Streaming Platfrom (Netflix Clone)\\nKey Skills: Android Development RazerPay XML Firebase API\\n• Developed a video streaming platform that allow users to watch movies and trailers. \\n•The platform includes features such as monthly subscription, multiple payment options\\nPUBLICATIONS\\nEnhancing file security using hybrid cryptography\\nIJSRSET-2023\\nJul 2020 – Apr 2024\\nPUNE, India\\nJun 2019 – Apr 2020\\nPUNE, India\\nJun 2017 – Apr 2018\\nPUNE, India\\nMar 2025\\nSep 2024\\nAug 2024\\nFeb 2024\\nAug 2023\\n2023ACHIEVEMENT\\nGoogle Developer Student Club Lead\\n@ AJEENKYA DY PATIL SCHOOL OF ENGINEERING\\n•As Lead created tech community of 500+members across the platform in the 1st chapter in in \\nmy campus\\n•Being Specker and manager Conducted 4+event and multiple competitions\\nCERTIFICATES\\nBeginning C++ Programming - From Beginner to Beyond\\nLearned Programming in C++: Covered OOP concepts, STL, Lambda expressions, and more.\\nPython for Data Science\\nIntroduction to powerful open-source Python libraries like NumPy, Pandas, Matplotlib, and Scikit-learn.\\n2023 – 2024\"\n    }\n]"
+				}
+			]
+		}
+	]
+}

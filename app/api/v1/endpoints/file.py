@@ -75,6 +75,10 @@ def search_resume(
                 FileModel.content.like(f"%{q}%")  # Search in file content
             )
         ).all()
+        for result in results:
+            if result.content is None:
+                result.content = "Content not available"
+                
         return results
     except Exception as e:
         traceback.print_exc()  # 👈 Print error in terminal
